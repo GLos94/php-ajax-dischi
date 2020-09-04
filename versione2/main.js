@@ -1,18 +1,15 @@
-
-
-
 function getData() {
-  // var dischi = [];
+
   $.ajax({
 
-    url: 'data.php',
+    url: 'http://localhost/php-ajax-dischi/versione2/data.php',
     method: 'GET',
     success: function (data){
       var success = data['success'];
       var dischi = data['response'];
       console.log(dischi);
 
-      drawPoster(dischi)
+      drawPoster(dischi);
     },
 
     error: function (err) {
@@ -35,7 +32,7 @@ function drawPoster(dischi) {
     var discoHTML = compiled(disco);
 
     target.append(discoHTML);
-}
+  }
 
 }
 
