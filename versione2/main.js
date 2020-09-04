@@ -2,7 +2,7 @@
 
 
 function getData() {
-  var dischi = [];
+  // var dischi = [];
   $.ajax({
 
     url: 'data.php',
@@ -24,7 +24,7 @@ function getData() {
 }
 
 
-function drawPoster(data) {
+function drawPoster(dischi) {
 
   var template = $('#poster-template').html();
   var compiled = Handlebars.compile(template);
@@ -32,9 +32,9 @@ function drawPoster(data) {
 
   for (var i = 0; i < dischi.length; i++) {
     var disco = dischi[i];
-    disco = compiled(dischi[i])
+    var discoHTML = compiled(disco);
 
-    target.append(disco);
+    target.append(discoHTML);
 }
 
 }
